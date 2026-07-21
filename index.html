@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Transmissão ao Vivo</title>
+<!-- Carrega a API do JaaS -->
+<script src='https://8x8.vc/vpaas-magic-cookie-fa33f91f501b4820ae2df5ba93618f17/external_api.js' async></script>
+<style>
+body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #000; overflow: hidden; }
+#jaas-container { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+<!-- Contêiner onde a transmissão da câmera será exibida -->
+<div id="jaas-container"></div>
+<script type="text/javascript">
+window.onload = () => {
+    const domain = "8x8.vc";
+    const options = {
+        roomName: "vpaas-magic-cookie-fa33f91f501b4820ae2df5ba93618f17/SampleAppUpsetRecipientsImposeIronically",
+        parentNode: document.getElementById('jaas-container'), // CORREÇÃO APLICADA AQUI
+        userInfo: { displayName: "Transmissor Oficial" },
+        configOverwrite: {
+            startWithAudioMuted: false, // Inicia com seu áudio ligado
+            startWithVideoMuted: false, // Inicia com sua câmera ligada
+            disableDeepLinking: true,   // Evita abrir app nativo no celular
+        },
+        interfaceConfigOverwrite: {
+            // Personalizações para a interface
+            SHOW_JITSI_WATERMARK: false,
+            SHOW_WATERMARK_FOR_GUESTS: false,
+            DEFAULT_REMOTE_DISPLAY_NAME: "Espectador",
+            TOOLBAR_BUTTONS: [
+                'microphone', 'camera', 'chat', 'fullscreen', 'settings'
+            ]
+        }
+    };
+    const api = new JitsiMeetExternalAPI(domain, options);
+};
+</script>
+</body>
+</html>
