@@ -1,0 +1,57 @@
+
+
+/* 1. O BODY controla apenas o visual da página como um todo */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    background-color: #00CED1;
+    color: #333;
+    margin: 0; /* Recomendado para remover margens padrão do navegador */
+}
+
+/* 2. Um container global que centraliza o conteúdo */
+.site-wrapper {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding: 5px;
+}
+
+/* 3. IMAGENS - Essencial para não estourarem a tela */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 4. CONTAINERS - Estilização e limite de largura */
+.container, 
+.steam-container,
+.contador-wrapper, 
+.formulario {
+    width: 100%;
+    max-width: 600px; /* Ajuste conforme a largura desejada */
+    background-color: #ADD8E6;
+    margin: 0 auto 20px auto; /* 0 topo, auto lados, 20px base */
+    border: 2px solid #000000; /* Borda sólida preta de 2px */
+    padding: 10px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* 5. LISTAS */
+.container ul {
+    display: flex; /* Alinha os itens na horizontal */
+    list-style: none; /* Remove as bolinhas da lista */
+    gap: 10px; /* Espaçamento entre os itens */
+    padding: 0; /* Remove o recuo padrão do navegador */
+    margin: 0;
+}
+
+.container ul li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #000;
+    font-weight: bold;
+}
