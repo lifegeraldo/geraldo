@@ -12,6 +12,9 @@ body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color:
 </head>
 <body>
 <!-- Contêiner onde a transmissão da câmera será exibida -->
+<div class="site-wrapper">
+<div class="container">
+    
 <div id="jaas-container"></div>
 <script type="text/javascript">
 window.onload = () => {
@@ -32,11 +35,35 @@ window.onload = () => {
             DEFAULT_REMOTE_DISPLAY_NAME: "Espectador",
             TOOLBAR_BUTTONS: [
                 'microphone', 'camera', 'chat', 'fullscreen', 'settings'
-            ]
-        }
-    };
-    const api = new JitsiMeetExternalAPI(domain, options);
-};
+            ]  }  };
+            
+    const api = new JitsiMeetExternalAPI(domain, options); };
 </script>
+</div>
+</div>
+
+
+
+<div class="container">
+    <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="contato.html">Contato</a></li>
+    </ul>
+    </div>
+    
+
+
+<div class="container"></div>""
+<script>
+function copiarPix() {
+    const codigoPix = "00020126360014br.gov.bcb.pix0114+55129888491905204000053039865802BR5925GERALDO VAINER NOGUEIRA A6009Sao Paulo62290525REC69AA355F527B037535623263047E98"; 
+    navigator.clipboard.writeText(codigoPix);
+    alert("Código Pix copiado! Abra o app do seu banco e cole."); }
+</script>
+</div>
+
+
+
+
 </body>
 </html>
