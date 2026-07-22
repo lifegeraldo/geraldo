@@ -5,25 +5,11 @@
 <title>Transmissão ao Vivo</title>
 <!-- Carrega a API do JaaS -->
 <script src='https://8x8.vc/vpaas-magic-cookie-fa33f91f501b4820ae2df5ba93618f17/external_api.js' async></script>
-<style>
-body, html { 
-    margin: 0; 
-    padding: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: #000; 
-    overflow: hidden; 
-}
-.site-wrapper, .container {
-    width: 100%;
-    height: 100%;
-}
-#jaas-container { 
-    width: 100%; 
-    height: 100%; 
-}
-</style>
+
 </head>
+
+
+
 <body>
 
 <!-- Contêiner onde a transmissão da câmera será exibida -->
@@ -62,13 +48,15 @@ window.onload = () => {
 </script>
 
 <!-- Seções de navegação e rodapé (posicionadas fora do Jitsi para não quebrar o layout tela cheia) -->
-<div style="position: absolute; bottom: 10px; left: 10px; z-index: 10; color: white;">
+<div class="container">
     <ul>
-        <li><a href="index.html" style="color: #fff;">Início</a></li>
-        <li><a href="contato.html" style="color: #fff;">Contato</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="contato.html">Contato</a></li>
     </ul>
 </div>
 
+
+<div class="container">
 <script>
 function copiarPix() {
     const codigoPix = "00020126360014br.gov.bcb.pix0114+551298884919052040000530";
@@ -77,6 +65,9 @@ function copiarPix() {
     });
 }
 </script>
+</div>
+
+</div>
 
 </body>
 </html>
