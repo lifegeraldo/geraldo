@@ -6,64 +6,77 @@
 <!-- Carrega a API do JaaS -->
 <script src='https://8x8.vc/vpaas-magic-cookie-fa33f91f501b4820ae2df5ba93618f17/external_api.js' async></script>
 <style>
-body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #000; overflow: hidden; }
-#jaas-container { width: 100%; height: 100%; }
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: #000; 
+    overflow: hidden; 
+}
+.site-wrapper, .container {
+    width: 100%;
+    height: 100%;
+}
+#jaas-container { 
+    width: 100%; 
+    height: 100%; 
+}
 </style>
 </head>
 <body>
+
 <!-- Contêiner onde a transmissão da câmera será exibida -->
 <div class="site-wrapper">
-<div class="container">
-    
-<div id="jaas-container"></div>
+    <div class="container">
+        <div id="jaas-container"></div>
+    </div>
+</div>
+
 <script type="text/javascript">
 window.onload = () => {
     const domain = "8x8.vc";
     const options = {
         roomName: "vpaas-magic-cookie-fa33f91f501b4820ae2df5ba93618f17/SampleAppUpsetRecipientsImposeIronically",
-        parentNode: document.getElementById('jaas-container'), // CORREÇÃO APLICADA AQUI
+        parentNode: document.getElementById('jaas-container'),
+        width: '100%',
+        height: '100%',
         userInfo: { displayName: "Transmissor Oficial" },
         configOverwrite: {
-            startWithAudioMuted: false, // Inicia com seu áudio ligado
-            startWithVideoMuted: false, // Inicia com sua câmera ligada
-            disableDeepLinking: true,   // Evita abrir app nativo no celular
+            startWithAudioMuted: false, 
+            startWithVideoMuted: false, 
+            disableDeepLinking: true,   
         },
         interfaceConfigOverwrite: {
-            // Personalizações para a interface
             SHOW_JITSI_WATERMARK: false,
             SHOW_WATERMARK_FOR_GUESTS: false,
             DEFAULT_REMOTE_DISPLAY_NAME: "Espectador",
             TOOLBAR_BUTTONS: [
                 'microphone', 'camera', 'chat', 'fullscreen', 'settings'
-            ]  }  };
-            
-    const api = new JitsiMeetExternalAPI(domain, options); };
-</script>
-</div>
-</div>
-
-
-
-<div class="container">
-    <ul>
-    <li><a href="index.html">Início</a></li>
-    <li><a href="contato.html">Contato</a></li>
-    </ul>
-    </div>
+            ]
+        }
+    };
     
+    const api = new JitsiMeetExternalAPI(domain, options);
+};
+</script>
 
+<!-- Seções de navegação e rodapé (posicionadas fora do Jitsi para não quebrar o layout tela cheia) -->
+<div style="position: absolute; bottom: 10px; left: 10px; z-index: 10; color: white;">
+    <ul>
+        <li><a href="index.html" style="color: #fff;">Início</a></li>
+        <li><a href="contato.html" style="color: #fff;">Contato</a></li>
+    </ul>
+</div>
 
-<div class="container"></div>""
 <script>
 function copiarPix() {
-    const codigoPix = "00020126360014br.gov.bcb.pix0114+55129888491905204000053039865802BR5925GERALDO VAINER NOGUEIRA A6009Sao Paulo62290525REC69AA355F527B037535623263047E98"; 
-    navigator.clipboard.writeText(codigoPix);
-    alert("Código Pix copiado! Abra o app do seu banco e cole."); }
+    const codigoPix = "00020126360014br.gov.bcb.pix0114+551298884919052040000530";
+    navigator.clipboard.writeText(codigoPix).then(() => {
+        alert("Código PIX copiado!");
+    });
+}
 </script>
-</div>
-
-
-
 
 </body>
 </html>
