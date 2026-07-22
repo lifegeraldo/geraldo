@@ -28,6 +28,7 @@ img {
 }
 
 /* 4. CONTAINERS - Estilização e limite de largura */
+.figure,
 .container, 
 .steam-container,
 .contador-wrapper, 
