@@ -8,3 +8,50 @@ function copiarPixPaginaPrincipal() {
         console.error("Erro ao copiar: ", err);
     });
 }
+
+
+
+
+
+
+
+
+
+
+window.onload = () => {
+    const domain = "8x8.vc";
+    const options = {
+        roomName: "vpaas-magic-cookie-fa33f91f501b4820ae2df5ba93618f17/SampleAppUpsetRecipientsImposeIronically",
+        parentNode: document.getElementById('jaas-container'),
+        width: '100%',
+        height: '100%',
+        userInfo: { displayName: "Transmissor Oficial" },
+        configOverwrite: {
+            startWithAudioMuted: false, 
+            startWithVideoMuted: false, 
+            disableDeepLinking: true,   
+        },
+        interfaceConfigOverwrite: {
+            SHOW_JITSI_WATERMARK: false,
+            SHOW_WATERMARK_FOR_GUESTS: false,
+            DEFAULT_REMOTE_DISPLAY_NAME: "Espectador",
+            TOOLBAR_BUTTONS: [
+                'microphone', 'camera', 'chat', 'fullscreen', 'settings'
+            ]
+        }
+    };
+    
+    const api = new JitsiMeetExternalAPI(domain, options);
+};
+
+
+
+
+
+
+
+
+
+
+
+
